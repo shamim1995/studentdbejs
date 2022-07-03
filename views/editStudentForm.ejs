@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto justify-content-center my-5">
+             
+            <div class="card shadow-lg">
+               
+                <div class="card-header">
+                    <a class="btn btn-info m-auto" href="/student">All Student</a>
+                    
+                    <h1 class="text-center">Edit Form</h1>
+                </div>
+                <div class="card-body">
+                    <form action="/student/edit/<%= singleStuData.id %> " method="POST" enctype="multipart/form-data">
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input type="text" value="<%= singleStuData.name %> " name="name" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Email</label>
+                            <input type="text" value="<%= singleStuData.email %>" name="email" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Location</label>
+                            <input type="text" value="<%= singleStuData.location %>" name=" location"
+                                class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Skill</label>
+                            <input type="text" value="<%= singleStuData.skill %>" name=" skill" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Cell</label>
+                            <input type="text" value="<%= singleStuData.cell %>" name=" cell" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                           
+                            <input type="file" name="photo" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="submit" class="btn btn-primary w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
