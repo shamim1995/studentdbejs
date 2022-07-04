@@ -3,33 +3,9 @@ const colors = require('colors')
 const path = require('path')
 const connectMongoDb = require('./config/db.js')
 const expressEjsLayouts = require('express-ejs-layouts')
-const multer = require('multer')
 const express =  require('express')
 const app = express();
 
-/**
- * multer destination
- * form mongoose
- */
-const storage = multer.diskStorage({
-
-    
-    destination: (req, file, cb)=>{
-        cb(null, path.join(__dirname, './assets/upload'))
-
-
-    },
-    
-    filename : (req, file, cb) =>{
-        cb(null, Date.now()+'_'+ file.originalname)
-        
-    }
-})
-
-const uploadMulter = multer({
-    storage: storage
-}).single('photo')
-module.exports = uploadMulter
 
 //env manage 
 

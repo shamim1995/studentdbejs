@@ -1,22 +1,39 @@
-
 const Student = require('../models/studentModel')
 
-const getAllStudent = async (req, res)=>{
+const getAllStudent = async (req, res) => {
 
     let studentData = await Student.find()
-    
-   res.render('studentdb', {studentData})
+
+    res.render('studentdb', {
+        studentData
+    })
 };
 const addStudent = (req, res) => {
     res.render('studentAddForm')
 }
 
-const getSingleStudent = async (req, res)=>{
-const id = req.params.id 
+// view
+const editViesStuForm = async (req, res) => {
+    const id = req.params.id
 
-let singleStuData = await Student.findById(id)
+    let viewSingleStuData = await Student.findById(id)
 
-res.render('singleStuShow', {singleStuData})    
+    res.render('editStudentForm', {
+        viewSingleStuData
+    })
+}
+
+
+
+
+const getSingleStudent = async (req, res) => {
+    const id = req.params.id
+
+    let singleStuData = await Student.findById(id)
+
+    res.render('singleStuShow', {
+        singleStuData
+    })
 }
 
 
@@ -27,6 +44,8 @@ res.render('singleStuShow', {singleStuData})
 module.exports = {
     getAllStudent,
     addStudent,
-    getSingleStudent
-    
+    getSingleStudent,
+    editViesStuForm
+
+
 }
